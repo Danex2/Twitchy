@@ -1,0 +1,4 @@
+# what to ignore
+node_modules/
+.vscode/
+.git/

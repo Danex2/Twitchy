@@ -5,5 +5,5 @@ Mostly to practice making apps with react but also to find new streamers I would
 
 ## Want to mess around with this by yourself?
 It's simple!
-clone with: `git clone https://github.com/Danex2/Twitchy.git`
+clone with: `git clone https://github.com/Danex2/twitchy.git`
 If you have npm then `npm install` or with yarn `yarn`

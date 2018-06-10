@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Video from './Video';
 
 export default class Twitchy extends React.Component {
     constructor() {
@@ -14,10 +15,9 @@ export default class Twitchy extends React.Component {
         return (
             <div>
                 <Header />
-                <div className="container">
-
-                </div>
+                <Video />
             </div>
+
         );
     }
 }

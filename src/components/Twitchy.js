@@ -14,6 +14,12 @@ export default class Twitchy extends React.Component {
     }
 
     //passing state into this doesn't though?
+    getGame = (event) => {
+        this.setState({ game: event.target.value });
+    }
+    getViewers = (event) => {
+        this.setState({ viewers: event.target.value });
+    }
     componentDidMount() {
         this.setState({ url: "http://player.twitch.tv/?channel=dallas&muted=false" })
     }
@@ -40,6 +46,7 @@ export default class Twitchy extends React.Component {
             const random_streamer = streamer_array[Math.floor(Math.random() * streamer_array.length)];
             this.setState({ streamer: random_streamer });
             this.setState({ url: `http://player.twitch.tv/?channel=${this.state.streamer}&muted=false` });
+            console.log(this.state.game);
         })
     }
     render() {
@@ -59,8 +66,8 @@ export default class Twitchy extends React.Component {
                 <div className="user-input">
                     <form onSubmit={this.handleRandomClick}>
                         <button type='submit'>Random streamer</button>
-                        <input type='text' placeholder='game' />
-                        <input type='text' placeholder='viewer count' />
+                        <input type='text' value={this.state.game} onChange={this.getGame} placeholder='game' />
+                        <input type='text' value={this.state.viewers} onChange={this.getViewers} placeholder='viewer count' />
                     </form>
                 </div>
             </div>

@@ -7,3 +7,6 @@ Mostly to practice making apps with react but also to find new streamers I would
 It's simple!
 clone with: `git clone https://github.com/Danex2/twitchy.git`
 If you have npm then `npm install` or with yarn `yarn`
+
+## Live Demo!
+http://cluttered-bath.surge.sh/

@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import axios from 'axios';
+import Video from './Video';
+import Form from './Form';
 
 export default class Twitchy extends React.Component {
     constructor(props) {
@@ -9,19 +11,21 @@ export default class Twitchy extends React.Component {
             streamer: '',
             game: 'Overwatch',
             viewers: 0,
-            url: ''
+            url: 'http://player.twitch.tv/?channel=dallas&muted=false'
         }
     }
 
     //passing state into this doesn't though?
     getGame = (event) => {
-        this.setState({ game: event.target.value });
+        const twitchGame = event.target.value;
+        this.setState({ game: twitchGame });
     }
     getViewers = (event) => {
-        this.setState({ viewers: event.target.value });
+        const twitchViewers = event.target.value;
+        this.setState({ viewers: twitchViewers });
     }
     componentDidMount() {
-        this.setState({ url: "http://player.twitch.tv/?channel=dallas&muted=false" })
+        this.setState({ url: this.state.url })
     }
     handleRandomClick = (e) => {
         e.preventDefault();
@@ -30,7 +34,7 @@ export default class Twitchy extends React.Component {
             timeout: 1000,
             headers: {
                 'Accept': 'application/vnd.twitchtv.v5+json',
-                'Client-ID': '<client-id here>'
+                'Client-ID': 'dlu1hinslk0p1ekafzbgm6d2jlq5ow'
             }
         });
 
@@ -46,30 +50,20 @@ export default class Twitchy extends React.Component {
             const random_streamer = streamer_array[Math.floor(Math.random() * streamer_array.length)];
             this.setState({ streamer: random_streamer });
             this.setState({ url: `http://player.twitch.tv/?channel=${this.state.streamer}&muted=false` });
-            console.log(this.state.game);
         })
     }
     render() {
         return (
             <div>
                 <Header />
-                <div className="container">
-                    <iframe
-                        src={this.state.url}
-                        height="720"
-                        width="1280"
-                        frameBorder="0"
-                        scrolling="no"
-                        allowFullScreen="true">
-                    </iframe>
-                </div>
-                <div className="user-input">
-                    <form onSubmit={this.handleRandomClick}>
-                        <button type='submit'>Random streamer</button>
-                        <input type='text' value={this.state.game} onChange={this.getGame} placeholder='game' />
-                        <input type='text' value={this.state.viewers} onChange={this.getViewers} placeholder='viewer count' />
-                    </form>
-                </div>
+                <Video 
+                    videoURL={this.state.url}
+                />
+                <Form
+                    getVideoGame={this.getGame}
+                    getTwitchViewers={this.getViewers}
+                    submit={this.handleRandomClick}
+                />
             </div>
         );
     }

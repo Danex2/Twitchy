@@ -25,7 +25,6 @@
     "react": "16.0.0",
     "react-dom": "16.0.0",
     "react-modal": "2.2.2",
-    "reactstrap": "^6.1.0",
     "sass-loader": "^6.0.6",
     "semantic-ui-react": "^0.80.2",
     "style-loader": "0.18.2",

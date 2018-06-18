@@ -34,7 +34,7 @@ export default class Twitchy extends React.Component {
             timeout: 1000,
             headers: {
                 'Accept': 'application/vnd.twitchtv.v5+json',
-                'Client-ID': 'dlu1hinslk0p1ekafzbgm6d2jlq5ow'
+                'Client-ID': '<client-id>'
             }
         });
 

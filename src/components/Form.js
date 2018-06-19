@@ -1,15 +1,22 @@
 import React from 'react';
+import { Button, Input } from 'semantic-ui-react';
 
-const Form = (props) => (
-    <div>
-        <div className="user-input">
-                    <form onSubmit={props.submit}>
-                        <input type='text' onChange={props.getVideoGame} placeholder='game' />
-                        <input type='text' onChange={props.getTwitchViewers} placeholder='viewer count' />
-                        <button type='submit'>Random streamer</button>
-                    </form>
-                </div>
+export default class Form extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+      <div className="user-input">
+        <form onSubmit={this.props.submit}>
+          <Input type="text" class="input" onChange={this.props.getVideoGame} placeholder="game" />
+          <Input type="text" class="input" onChange={this.props.getTwitchViewers} placeholder="viewer count" />
+          <Button type="submit" size="large">Random streamer</Button>
+        </form>
+      </div>
     </div>
-);
+    );
+  }
+}
 
-export default Form;

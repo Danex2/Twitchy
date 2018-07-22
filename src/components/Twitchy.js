@@ -1,21 +1,19 @@
-import React from 'react';
-import axios from 'axios';
-import Header from './Header';
-import Video from './Video';
-import Form from './Form';
+import React from "react";
+import axios from "axios";
+import Header from "./Header";
+import Video from "./Video";
+import Form from "./Form";
 
 export default class Twitchy extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      streamer: '',
-      game: 'Overwatch',
+      streamer: "",
+      game: "Overwatch",
       viewers: 0,
-      url: 'http://player.twitch.tv/?channel=dallas&muted=false'
+      url: "http://player.twitch.tv/?channel=dallas&muted=false"
     };
   }
-
-  // passing state into this doesn't though?
 
   componentDidMount() {
     this.setState({ url: this.state.url });
@@ -31,11 +29,11 @@ export default class Twitchy extends React.Component {
   handleRandomClick = e => {
     e.preventDefault();
     const instance = axios.create({
-      baseURL: 'https://api.twitch.tv/kraken/streams/',
+      baseURL: "https://api.twitch.tv/kraken/streams/",
       timeout: 1000,
       headers: {
-        Accept: 'application/vnd.twitchtv.v5+json',
-        'Client-ID': 'dlu1hinslk0p1ekafzbgm6d2jlq5ow'
+        Accept: "application/vnd.twitchtv.v5+json",
+        "Client-ID": "dlu1hinslk0p1ekafzbgm6d2jlq5ow"
       }
     });
 
@@ -44,14 +42,19 @@ export default class Twitchy extends React.Component {
       for (let i = 0; i < response.data.streams.length; i++) {
         if (
           response.data.streams[i].viewers > this.state.viewers &&
-          response.data.streams[i].broadcast_platform === 'live'
+          response.data.streams[i].broadcast_platform === "live"
         ) {
           streamerArray.push(response.data.streams[i].channel.name);
         }
       }
-      const randomStreamer = streamerArray[Math.floor(Math.random() * streamerArray.length)];
+      const randomStreamer =
+        streamerArray[Math.floor(Math.random() * streamerArray.length)];
       this.setState({ streamer: randomStreamer });
-      this.setState({ url: `http://player.twitch.tv/?channel=${this.state.streamer}&muted=false` });
+      this.setState({
+        url: `http://player.twitch.tv/?channel=${
+          this.state.streamer
+        }&muted=false`
+      });
     });
   };
   render() {

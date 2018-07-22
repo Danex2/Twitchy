@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, Input } from 'semantic-ui-react';
+import React from "react";
+import { Input, Icon, Row, Button } from "react-materialize";
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -8,15 +8,32 @@ export default class Form extends React.Component {
   render() {
     return (
       <div>
-      <div className="user-input">
-        <form onSubmit={this.props.submit}>
-          <Input type="text" class="input" onChange={this.props.getVideoGame} placeholder="game" />
-          <Input type="text" class="input" onChange={this.props.getTwitchViewers} placeholder="viewer count" />
-          <Button type="submit" size="large">Random streamer</Button>
-        </form>
+        <div className="user-input">
+          <form onSubmit={this.props.submit}>
+            <Row>
+              <Input
+                s={4}
+                label="Game"
+                onChange={this.props.getVideoGame}
+                autocomplete="off"
+              >
+                <Icon>android</Icon>
+              </Input>
+              <Input
+                s={4}
+                label="Viewer Count"
+                onChange={this.props.getTwitchViewers}
+                autocomplete="off"
+              >
+                <Icon>people</Icon>
+              </Input>
+              <Button className="submit-button" type="submit">
+                Random Streamer
+              </Button>
+            </Row>
+          </form>
+        </div>
       </div>
-    </div>
     );
   }
 }
-

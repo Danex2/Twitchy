@@ -9,4 +9,4 @@ clone with: `git clone https://github.com/Danex2/twitchy.git`
 If you have npm then `npm install` or with yarn `yarn`
 
 ## Live Demo!
-http://cluttered-bath.surge.sh/
+http://hard-to-find-lead.surge.sh/

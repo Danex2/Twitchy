@@ -1,11 +1,12 @@
 import React from "react";
 
 const Video = props => (
-  <div className="container resp-container">
+  <div className="container">
     <iframe
       title="Twitch stream"
       src={props.videoURL}
-      className="resp-iframe"
+      height="720"
+      width="1280"
       frameBorder="0"
       scrolling="no"
       allowFullScreen="true"

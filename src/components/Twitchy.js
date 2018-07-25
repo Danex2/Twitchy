@@ -33,7 +33,7 @@ export default class Twitchy extends React.Component {
       timeout: 1000,
       headers: {
         Accept: "application/vnd.twitchtv.v5+json",
-        "Client-ID": "<id here>"
+        "Client-ID": ""
       }
     });
 

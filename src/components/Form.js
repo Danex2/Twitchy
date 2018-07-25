@@ -15,7 +15,7 @@ export default class Form extends React.Component {
                 s={4}
                 label="Game"
                 onChange={this.props.getVideoGame}
-                autocomplete="off"
+                autoComplete="off"
               >
                 <Icon>android</Icon>
               </Input>
@@ -23,7 +23,7 @@ export default class Form extends React.Component {
                 s={4}
                 label="Viewer Count"
                 onChange={this.props.getTwitchViewers}
-                autocomplete="off"
+                autoComplete="off"
               >
                 <Icon>people</Icon>
               </Input>

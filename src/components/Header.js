@@ -4,17 +4,9 @@ const Header = () => (
   <div className="nav-container">
     <nav>
       <div className="nav-wrapper deep-purple">
-        <a href="#" className="brand-logo">
+        <a href="#" className="brand-logo center">
           Twitchy
         </a>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li>
-            <a href="https://github.com/Danex2">Github</a>
-          </li>
-          <li>
-            <a href="https://twitter.com/hybridearth">Twitter</a>
-          </li>
-        </ul>
       </div>
     </nav>
   </div>

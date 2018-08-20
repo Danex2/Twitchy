@@ -1,5 +1,4 @@
 import React from "react";
-import { Input, Icon, Row, Button } from "react-materialize";
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -10,27 +9,28 @@ export default class Form extends React.Component {
       <div>
         <div className="user-input">
           <form onSubmit={this.props.submit}>
-            <Row>
-              <Input
-                s={4}
+            <div className="row container center">
+              <input
+                className="col s12 m12 l12"
                 label="Game"
                 onChange={this.props.getVideoGame}
                 autoComplete="off"
-              >
-                <Icon>android</Icon>
-              </Input>
-              <Input
-                s={4}
+                placeholder="Search for a game!"
+              />
+              <input
+                className="col s12 m12 l12"
                 label="Viewer Count"
                 onChange={this.props.getTwitchViewers}
                 autoComplete="off"
+                placeholder="Type in the base amount of viewers to look for"
+              />
+              <button
+                className="submit-button waves-effect waves-light btn-large"
+                type="submit"
               >
-                <Icon>people</Icon>
-              </Input>
-              <Button className="submit-button" type="submit">
                 Random Streamer
-              </Button>
-            </Row>
+              </button>
+            </div>
           </form>
         </div>
       </div>

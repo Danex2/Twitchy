@@ -5,8 +5,8 @@ const Video = props => (
     <iframe
       title="Twitch stream"
       src={props.videoURL}
-      height="300"
-      width="300"
+      height="1280"
+      width="720"
       frameBorder="0"
       scrolling="no"
       allowFullScreen="true"

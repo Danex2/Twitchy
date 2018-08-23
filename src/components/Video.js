@@ -1,7 +1,7 @@
 import React from "react";
 
 const Video = props => (
-  <div className="video-container">
+  <div className="video-container container center-align">
     <iframe
       title="Twitch stream"
       src={props.videoURL}

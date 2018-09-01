@@ -11,7 +11,7 @@ export default class Twitchy extends React.Component {
       streamer: "",
       game: "Overwatch",
       viewers: 0,
-      url: "http://player.twitch.tv/?channel=dallas&muted=false"
+      url: "https://player.twitch.tv/?channel=dallas&muted=false"
     };
   }
 
@@ -51,7 +51,7 @@ export default class Twitchy extends React.Component {
         streamerArray[Math.floor(Math.random() * streamerArray.length)];
       this.setState({ streamer: randomStreamer });
       this.setState({
-        url: `http://player.twitch.tv/?channel=${
+        url: `https://player.twitch.tv/?channel=${
           this.state.streamer
         }&muted=false`
       });

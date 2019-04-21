@@ -4,9 +4,10 @@
 Mostly to practice making apps with react but also to find new streamers I wouldn't usually come across
 
 ## Want to mess around with this by yourself?
-It's simple!
-clone with: `git clone https://github.com/Danex2/twitchy.git`
-If you have npm then `npm install` or with yarn `yarn`
+It's simple!  
+clone with: `git clone https://github.com/Danex2/twitchy.git`  
+If you have npm then `npm install` or with yarn `yarn`  
+then start with ``npm start`` or ``yarn start``
 
 ## Live Demo!
-https://mysterious-dawn-60982.herokuapp.com/
+http://twitchyapp.herokuapp.com/

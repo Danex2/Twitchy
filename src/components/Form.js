@@ -15,7 +15,7 @@ export default class Form extends React.Component {
                 label="Game"
                 onChange={this.props.getVideoGame}
                 autoComplete="off"
-                placeholder="Search for a game!"
+                placeholder="Game"
               />
               <input
                 className="col s12 m12 l12"
